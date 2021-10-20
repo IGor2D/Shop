@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "N+koMM+f+FjmFIYrVhGkrG0P1SLGScvwvScJ4VcM48d10kwCncrKUvje5ltzvWCAyuW75KdLD4FUGPEBM97eGg==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\J.Sound\\Desktop\\TTHK\\Programeerimine\\Ingvar\\TITgv20_shop\\Shop\\shop.data\\Shop.Data.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Не удалось найти пакет Microsoft.AspNetCore.Identity.EntityFrameworkCore. Пакеты с таким идентификатором отсутствуют в следующих источниках пакетов: Microsoft Visual Studio Offline Packages",
+      "libraryId": "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\J.Sound\\Desktop\\TTHK\\Programeerimine\\Ingvar\\TITgv20_shop\\Shop\\shop.data\\Shop.Data.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\J.Sound\\Desktop\\TTHK\\Programeerimine\\Ingvar\\TITgv20_shop\\Shop\\Shop.Core\\Shop.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\J.Sound\\Desktop\\TTHK\\Programeerimine\\Ingvar\\TITgv20_shop\\Shop\\Shop.Core\\Shop.Core.csproj",
+        "projectName": "Shop.Core",
+        "projectPath": "C:\\Users\\J.Sound\\Desktop\\TTHK\\Programeerimine\\Ingvar\\TITgv20_shop\\Shop\\Shop.Core\\Shop.Core.csproj",
+        "packagesPath": "C:\\Users\\J.Sound\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\J.Sound\\Desktop\\TTHK\\Programeerimine\\Ingvar\\TITgv20_shop\\Shop\\Shop.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\J.Sound\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\J.Sound\\Desktop\\TTHK\\Programeerimine\\Ingvar\\TITgv20_shop\\Shop\\shop.data\\Shop.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\J.Sound\\Desktop\\TTHK\\Programeerimine\\Ingvar\\TITgv20_shop\\Shop\\shop.data\\Shop.Data.csproj",
+        "projectName": "Shop.Data",
+        "projectPath": "C:\\Users\\J.Sound\\Desktop\\TTHK\\Programeerimine\\Ingvar\\TITgv20_shop\\Shop\\shop.data\\Shop.Data.csproj",
+        "packagesPath": "C:\\Users\\J.Sound\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\J.Sound\\Desktop\\TTHK\\Programeerimine\\Ingvar\\TITgv20_shop\\Shop\\shop.data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\J.Sound\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\J.Sound\\Desktop\\TTHK\\Programeerimine\\Ingvar\\TITgv20_shop\\Shop\\Shop.Core\\Shop.Core.csproj": {
+                "projectPath": "C:\\Users\\J.Sound\\Desktop\\TTHK\\Programeerimine\\Ingvar\\TITgv20_shop\\Shop\\Shop.Core\\Shop.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
