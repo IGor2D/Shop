@@ -1,0 +1,2 @@
+D:\TITgv20\Shop\Shop\shop.data\obj\Debug\netcoreapp3.1\Shop.data.AssemblyInfoInputs.cache
+D:\TITgv20\Shop\Shop\shop.data\obj\Debug\netcoreapp3.1\Shop.data.AssemblyInfo.cs
