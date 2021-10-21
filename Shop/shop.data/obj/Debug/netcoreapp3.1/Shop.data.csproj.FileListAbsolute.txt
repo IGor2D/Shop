@@ -1,2 +1,15 @@
 D:\TITgv20\Shop\Shop\shop.data\obj\Debug\netcoreapp3.1\Shop.data.AssemblyInfoInputs.cache
 D:\TITgv20\Shop\Shop\shop.data\obj\Debug\netcoreapp3.1\Shop.data.AssemblyInfo.cs
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\shop.data\bin\Debug\netcoreapp3.1\Shop.Data.deps.json
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\shop.data\bin\Debug\netcoreapp3.1\Shop.Data.dll
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\shop.data\bin\Debug\netcoreapp3.1\Shop.Data.pdb
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\shop.data\bin\Debug\netcoreapp3.1\Shop.Core.dll
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\shop.data\bin\Debug\netcoreapp3.1\Shop.Core.pdb
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\shop.data\obj\Debug\netcoreapp3.1\Shop.Data.csproj.AssemblyReference.cache
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\shop.data\obj\Debug\netcoreapp3.1\Shop.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\shop.data\obj\Debug\netcoreapp3.1\Shop.Data.AssemblyInfoInputs.cache
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\shop.data\obj\Debug\netcoreapp3.1\Shop.Data.AssemblyInfo.cs
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\shop.data\obj\Debug\netcoreapp3.1\Shop.Data.csproj.CoreCompileInputs.cache
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\shop.data\obj\Debug\netcoreapp3.1\Shop.Data.csproj.CopyComplete
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\shop.data\obj\Debug\netcoreapp3.1\Shop.Data.dll
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\shop.data\obj\Debug\netcoreapp3.1\Shop.Data.pdb
