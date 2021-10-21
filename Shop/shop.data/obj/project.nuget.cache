@@ -1,15 +1,65 @@
 {
   "version": 2,
-  "dgSpecHash": "N+koMM+f+FjmFIYrVhGkrG0P1SLGScvwvScJ4VcM48d10kwCncrKUvje5ltzvWCAyuW75KdLD4FUGPEBM97eGg==",
-  "success": false,
+  "dgSpecHash": "nzxFFirmiZgXbn5JARTrcIzkJVx/qb4SogiEwwrCOXZm2yCTWod5DhW9d3QXHJiDwqT++r9qdqjOQ7DqFvCmyA==",
+  "success": true,
   "projectFilePath": "C:\\Users\\J.Sound\\Desktop\\TTHK\\Programeerimine\\Ingvar\\TITgv20_shop\\Shop\\shop.data\\Shop.Data.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\J.Sound\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.aspnet.identity.entityframework\\2.2.3\\microsoft.aspnet.identity.entityframework.2.2.3.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.20\\microsoft.aspnetcore.cryptography.internal.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.20\\microsoft.aspnetcore.cryptography.keyderivation.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.20\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.20\\microsoft.entityframeworkcore.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.20\\microsoft.entityframeworkcore.abstractions.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.20\\microsoft.entityframeworkcore.analyzers.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.20\\microsoft.entityframeworkcore.relational.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.20\\microsoft.extensions.caching.abstractions.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.20\\microsoft.extensions.caching.memory.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.20\\microsoft.extensions.configuration.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.20\\microsoft.extensions.configuration.abstractions.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.20\\microsoft.extensions.configuration.binder.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.20\\microsoft.extensions.dependencyinjection.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.20\\microsoft.extensions.dependencyinjection.abstractions.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.extensions.identity.core\\3.1.20\\microsoft.extensions.identity.core.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.extensions.identity.stores\\3.1.20\\microsoft.extensions.identity.stores.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.extensions.logging\\3.1.20\\microsoft.extensions.logging.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.20\\microsoft.extensions.logging.abstractions.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.extensions.options\\3.1.20\\microsoft.extensions.options.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.20\\microsoft.extensions.primitives.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+  ],
   "logs": [
     {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Не удалось найти пакет Microsoft.AspNetCore.Identity.EntityFrameworkCore. Пакеты с таким идентификатором отсутствуют в следующих источниках пакетов: Microsoft Visual Studio Offline Packages",
-      "libraryId": "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'EntityFramework 6.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "EntityFramework",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Identity.Core",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Identity.EntityFramework 2.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Identity.EntityFramework",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"
       ]
