@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Shop.Core;
 using Shop.Core.Domain;
+using System;
+using System.Threading.Tasks;
 
 namespace shop.data
 {
@@ -11,5 +13,10 @@ namespace shop.data
         public ShopDbcontext(DbContextOptions<ShopDbcontext> options)
             : base(options) { }           
     public DbSet<Product> Product { get; set; }
+
+        public Task SaveChangesAsync(Product product)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
