@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,5 +14,7 @@ namespace Shop.Core.Dtos
         public double Weight { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifieAt { get; set; }
+        public List<IFormFile> Files { get; set; }
+        public IEnumerable<ExistingFilePathDto> ExistingFilePaths { get; set; } = new List<ExistingFilePathDto>();
     }
 }

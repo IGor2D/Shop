@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using shop.data;
+using Shop.ApplicationServices.Services;
+using Shop.Core.ServiceInterface;
 
 namespace Shop
 {
@@ -26,7 +28,8 @@ namespace Shop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ShopDbcontext>(options =>
-            options.UseSqlServer(_configuration["DefautConnection"]));                
+            options.UseSqlServer(_configuration["DefautConnection"]));
+            services.AddScoped<IProductService, ProductServices>();
             services.AddControllersWithViews();
         }
 

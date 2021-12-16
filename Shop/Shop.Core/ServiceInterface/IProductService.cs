@@ -10,5 +10,9 @@ namespace Shop.Core.ServiceInterface
     public interface IProductService : IApplicationService
     {
         Task<Product> Add(ProductDto dto);
+        Task<Product> Delete(Guid id);
+        Task<Product> Update(ProductDto dto);
+        Task<Product> GetAsync(Guid id);
+        Task<ExistingFilePath> RemoveImage(ExistingFilePathDto dto);
     }
 }

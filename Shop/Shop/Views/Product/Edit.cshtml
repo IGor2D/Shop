@@ -30,19 +30,19 @@ else
             </div>
         </div>
 
-        @*<div class="form-group row">
-            <label asp-for="files" class="col-sm-2 col-form-label"></label>
+        <div class="form-group row">
+            <label asp-for="Files" class="col-sm-2 col-form-label"></label>
             <div class="col-sm-5">
                 <div class="custom-file">
-                    <input class="form-control custom-file-input" asp-for="files" multiple type="file" />
+                    <input class="form-control custom-file-input" asp-for="Files" multiple type="file" />
                     <label class="custom-file-label">choose file...</label>
                 </div>
             </div>
-        </div>*@
+        </div>
 
-        @*@foreach (var photo in Model.ExistingFilePaths)
+        @foreach (var photo in Model.ExistingFilePaths)
         {
-<partial name="_Photo" model="photo" />}*@
+<partial name="_Photo" model="photo" />}
 
         <div class="form-group row">
             <label asp-for="Value" class="col-sm-2 col-form-label"></label>

@@ -12,11 +12,9 @@ namespace shop.data
     {
         public ShopDbcontext(DbContextOptions<ShopDbcontext> options)
             : base(options) { }           
-    public DbSet<Product> Product { get; set; }
+    
+        public DbSet<Product> Product { get; set; }
 
-        public Task SaveChangesAsync(Product product)
-        {
-            throw new NotImplementedException();
-        }
+        public DbSet<ExistingFilePath> ExistingFilePath { get; set; }
     }
 }
