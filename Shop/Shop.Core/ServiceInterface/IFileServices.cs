@@ -9,8 +9,11 @@ namespace Shop.Core.ServiceInterface
 {
     public interface IFileServices : IApplicationService
     {
-        string ProcessUploadFile(ProductDto dto, Product product, CarDto dto2, Car car);
+        string ProcessUploadFile(ProductDto dto, Product product);
+        string ProcessUploadFile2(CarDto dto2, Car car);
         Task<ExistingFilePath> RemoveImage(ExistingFilePathDto dto);
         Task<ExistingFilePath> RemoveImages(ExistingFilePathDto[] dto);
+        Task<ExistingFilePath> RemoveImage2(ExistingFilePathDto dto2);
+        Task<ExistingFilePath> RemoveImages2(ExistingFilePathDto[] dto2);
     }
 }

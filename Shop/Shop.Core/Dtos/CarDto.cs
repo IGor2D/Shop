@@ -11,7 +11,7 @@ namespace Shop.Core.Dtos
         public string Name { get; set; }
         public string Description { get; set; }
         public double Value { get; set; }
-        public double Color { get; set; }
+        public string Color { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifieAt { get; set; }
         public List<IFormFile> Files { get; set; }

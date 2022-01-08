@@ -14,6 +14,7 @@ namespace shop.data
             : base(options) { }           
     
         public DbSet<Product> Product { get; set; }
+        public DbSet<Car> Car { get; set; }
 
         public DbSet<ExistingFilePath> ExistingFilePath { get; set; }
     }

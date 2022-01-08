@@ -147,6 +147,6 @@ C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.EventSource.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
-C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Cars\Edit.cshtml.g.cs
-C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Cars\Index.cshtml.g.cs
-C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Cars\_Photo.cshtml.g.cs
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Car\Edit.cshtml.g.cs
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Car\Index.cshtml.g.cs
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Car\_Photo.cshtml.g.cs
