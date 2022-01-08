@@ -14,14 +14,17 @@ namespace Shop.Controllers
     {
         private readonly ShopDbcontext _context;
         private readonly IProductService _productService;
+        private readonly IFileServices _fileServices;
         public ProductController
             (
             ShopDbcontext context,
-            IProductService productService
+            IProductService productService,
+            IFileServices fileServices
             )
         {
             _context = context;
             _productService = productService;
+            _fileServices = fileServices;
         }
 
 
@@ -157,7 +160,7 @@ namespace Shop.Controllers
             {
                 Id = model.PhotoId
             };
-            var photo = await _productService.RemoveImage(dto);
+            var photo = await _fileServices.RemoveImage(dto);
             if (photo == null)
             {
                 return RedirectToAction(nameof(Index));

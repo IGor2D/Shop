@@ -7,6 +7,7 @@ using Shop.Core.Dtos;
 using Shop.Core.ServiceInterface;
 using System;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Shop.ApplicationServices.Services
@@ -15,14 +16,17 @@ namespace Shop.ApplicationServices.Services
     {
         private readonly ShopDbcontext _context;
         private readonly IWebHostEnvironment _env;
+        private readonly IFileServices _fileServices;
         public ProductServices            
             (
             ShopDbcontext context,
-            IWebHostEnvironment env
+            IWebHostEnvironment env,
+            IFileServices fileServices
             )
         {
             _context = context;
             _env = env;
+            _fileServices = fileServices;
         }
 
         public async Task<Product> Add(ProductDto dto)
@@ -35,8 +39,8 @@ namespace Shop.ApplicationServices.Services
             product.Weight = dto.Weight;
             product.CreatedAt = DateTime.Now;
             product.ModifieAt = DateTime.Now;
-            ProcessUploadFile(dto, product);
-
+            _fileServices.ProcessUploadFile(dto, product);
+            
             await _context.Product.AddAsync(product);
             await _context.SaveChangesAsync();
 
@@ -49,6 +53,18 @@ namespace Shop.ApplicationServices.Services
             var productId = await _context.Product
                 .Include(x => x.ExistingFilePaths)
                 .FirstOrDefaultAsync(x => x.Id == id);
+
+            var photos = await _context.ExistingFilePath
+                .Where(x => x.ProductId == id)
+                .Select(y => new ExistingFilePathDto
+                {
+                    Id = y.Id,
+                    ExistingFilePat = y.FilePath,
+                    ProductId = y.ProductId
+                })
+                .ToArrayAsync();
+
+            await _fileServices.RemoveImages(photos);
             _context.Product.Remove(productId);
             await _context.SaveChangesAsync();
             return productId;
@@ -58,7 +74,6 @@ namespace Shop.ApplicationServices.Services
         public async Task<Product> Update(ProductDto dto)
         {
             Product product = new Product();
-            ExistingFilePath file = new ExistingFilePath();
             product.Id = dto.Id;
             product.Name = dto.Name;
             product.Description = dto.Description;
@@ -66,11 +81,7 @@ namespace Shop.ApplicationServices.Services
             product.Weight = dto.Weight;
             product.CreatedAt = dto.CreatedAt;
             product.ModifieAt = DateTime.Now;
-
-            if (dto.Files != null)
-            {
-                file.FilePath = ProcessUploadFile(dto, product);
-            }
+            _fileServices.ProcessUploadFile(dto, product);
 
             _context.Product.Update(product);
             await _context.SaveChangesAsync();
@@ -86,43 +97,43 @@ namespace Shop.ApplicationServices.Services
         }
 
 
-        public string ProcessUploadFile(ProductDto dto, Product product)
-        {
-            string uniqueFileName = null;
-            if(dto.Files != null && dto.Files.Count > 0)
-            {
-                if(!Directory.Exists(_env.WebRootPath + "\\multipleFileUpload\\"))
-                {
-                    Directory.CreateDirectory(_env.WebRootPath + "\\multipleFileUpload\\");
-                }
+        //public string ProcessUploadFile(ProductDto dto, Product product)
+        //{
+        //    string uniqueFileName = null;
+        //    if(dto.Files != null && dto.Files.Count > 0)
+        //    {
+        //        if(!Directory.Exists(_env.WebRootPath + "\\multipleFileUpload\\"))
+        //        {
+        //            Directory.CreateDirectory(_env.WebRootPath + "\\multipleFileUpload\\");
+        //        }
 
-                foreach (var photo in dto.Files)
-                {
-                    string uploadsFolder = Path.Combine(_env.WebRootPath, "multipleFileUpload");
-                    uniqueFileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
-                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                    using (var fileStream = new FileStream(filePath, FileMode.Create))
-                    {
-                        photo.CopyTo(fileStream);
-                        ExistingFilePath path = new ExistingFilePath
-                        {
-                            Id = Guid.NewGuid(),
-                            FilePath = uniqueFileName,
-                            ProductId = product.Id
-                        };
-                        _context.ExistingFilePath.Add(path);
-                    }
-                }
-            }
-            return uniqueFileName;
-        }
-        public async Task<ExistingFilePath> RemoveImage(ExistingFilePathDto dto)
-        {
-            var photoId = await _context.ExistingFilePath
-                .FirstOrDefaultAsync(x => x.Id == dto.Id);
-            _context.ExistingFilePath.Remove(photoId);
-            await _context.SaveChangesAsync();
-            return photoId;
-        }
+        //        foreach (var photo in dto.Files)
+        //        {
+        //            string uploadsFolder = Path.Combine(_env.WebRootPath, "multipleFileUpload");
+        //            uniqueFileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
+        //            string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+        //            using (var fileStream = new FileStream(filePath, FileMode.Create))
+        //            {
+        //                photo.CopyTo(fileStream);
+        //                ExistingFilePath path = new ExistingFilePath
+        //                {
+        //                    Id = Guid.NewGuid(),
+        //                    FilePath = uniqueFileName,
+        //                    ProductId = product.Id
+        //                };
+        //                _context.ExistingFilePath.Add(path);
+        //            }
+        //        }
+        //    }
+        //    return uniqueFileName;
+        //}
+        //public async Task<ExistingFilePath> RemoveImage(ExistingFilePathDto dto)
+        //{
+        //    var photoId = await _context.ExistingFilePath
+        //        .FirstOrDefaultAsync(x => x.Id == dto.Id);
+        //    _context.ExistingFilePath.Remove(photoId);
+        //    await _context.SaveChangesAsync();
+        //    return photoId;
+        //}
     }
 }

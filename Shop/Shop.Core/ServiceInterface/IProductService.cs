@@ -13,6 +13,6 @@ namespace Shop.Core.ServiceInterface
         Task<Product> Delete(Guid id);
         Task<Product> Update(ProductDto dto);
         Task<Product> GetAsync(Guid id);
-        Task<ExistingFilePath> RemoveImage(ExistingFilePathDto dto);
+        //Task<ExistingFilePath> RemoveImage(ExistingFilePathDto dto);
     }
 }

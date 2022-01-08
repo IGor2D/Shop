@@ -8,6 +8,6 @@ namespace Shop.Core.Dtos
     {
         public Guid Id { get; set; }
         public string ExistingFilePat { get; set; }
-        public Guid ProductId { get; set; }
+        public Guid? ProductId { get; set; }
     }
 }
