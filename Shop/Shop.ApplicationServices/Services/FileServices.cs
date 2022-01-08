@@ -23,7 +23,7 @@ namespace Shop.ApplicationServices.Services
             _context = context;
             _env = env;
         }
-        public string ProcessUploadFile(ProductDto dto, Product product)
+        public string ProcessUploadFile(ProductDto dto, Product product, CarDto dto2, Car car)
         {
             string uniqueFileName = null;
             if (dto.Files != null && dto.Files.Count > 0)
@@ -48,6 +48,32 @@ namespace Shop.ApplicationServices.Services
                             ProductId = product.Id
                         };
                        _context.ExistingFilePath.AddAsync(path);
+
+                    }
+                }
+            }
+            if (dto2.Files != null && dto2.Files.Count > 0)
+            {
+                if (!Directory.Exists(_env.WebRootPath + "\\multipleFileUpload\\"))
+                {
+                    Directory.CreateDirectory(_env.WebRootPath + "\\multipleFileUpload\\");
+                }
+
+                foreach (var photo in dto2.Files)
+                {
+                    string uploadsFolder = Path.Combine(_env.WebRootPath, "multipleFileUpload");
+                    uniqueFileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        photo.CopyTo(fileStream);
+                        ExistingFilePath path = new ExistingFilePath
+                        {
+                            Id = Guid.NewGuid(),
+                            FilePath = uniqueFileName,
+                            CarId = car.Id,
+                        };
+                        _context.ExistingFilePath.AddAsync(path);
 
                     }
                 }
