@@ -154,13 +154,13 @@ namespace Shop.Controllers
             return RedirectToAction(nameof(Index), model);
         }
         [HttpPost]
-        public async Task<IActionResult> RemoveImage(ExistingFilePathViewModel model)
+        public async Task<IActionResult> RemoveImage2(ExistingFilePathViewModel model)
         {
             var dto = new ExistingFilePathDto()
             {
                 Id = model.PhotoId
             };
-            var photo = await _fileServices.RemoveImage(dto);
+            var photo = await _fileServices.RemoveImage2(dto);
             if (photo == null)
             {
                 return RedirectToAction(nameof(Index));
