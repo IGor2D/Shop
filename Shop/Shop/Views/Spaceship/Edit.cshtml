@@ -1,0 +1,106 @@
+﻿@model Shop.Models.Product.SpaceshipViewModel
+
+
+@if (Model.Id.HasValue)
+{
+<h1>Update</h1>
+}
+else
+{
+<h1>Add</h1>
+}
+
+<div>
+    <form method="post" enctype="multipart/form-data">
+        <input asp-for="Id" type="hidden" />
+        <input asp-for="CreatedAt" type="hidden" />
+        <input asp-for="ModifieAt" type="hidden" />
+
+        <div class="form-group row">
+            <label asp-for="Name" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Name" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Model" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Model" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Company" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Company" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="EnginePower" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="EnginePower" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Country" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Country" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="LaunchDate" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="LaunchDate" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="CreatedAt" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="CreatedAt" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="ModifieAt" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="ModifieAt" class="form-control" />
+            </div>
+        </div>
+
+        @foreach (var photo in Model.ExistingFilePaths)
+        {
+    <partial name="_Photo" model="photo" />}
+
+        <div class="form-group row">
+            <label asp-for="Value" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Value" class="form-control" />
+            </div>
+        </div>
+
+        @if (Model.Id.HasValue)
+        {
+    <input asp-action="edit" asp-controller="spaceship" type="submit" class="btn btn-primary" value="Update">
+                    <input asp-action="delete" asp-controller="spaceship" asp-for="Id" type="submit" class="btn btn-danger" value="Delete"> }
+                else
+                {
+    <input asp-action="add" asp-controller="spaceship" type="submit" class="btn btn-primary" value="Add">}
+        <a asp-action="index" class="btn btn-primary">Index</a>
+
+    </form>
+</div>
+
+@section Scripts
+{
+    <script>$(document).ready(function () {
+            $('.custom-file-input').on("change", function () {
+                var fileLabel = $(this).next('.custom-file-label');
+                var files = $(this)[0].files;
+                if (files.length > 1) {
+                    fileLabel.html(files.length + ' files selected');
+                }
+                else if (files.length == 1) {
+                    fileLabel.html(files[0].name);
+                }
+                //$(this).next('.custom-file-label').html(fileLabel);
+            });
+        });</script>
+}
