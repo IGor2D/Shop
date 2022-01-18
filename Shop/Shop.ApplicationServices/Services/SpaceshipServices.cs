@@ -1,18 +1,18 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using shop.data;
 using Shop.Core.Domain;
 using Shop.Core.Dtos;
 using Shop.Core.ServiceInterface;
 using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Shop.ApplicationServices.Services
 {
-    public class SpaceshipServices : ISpaceshipServices
+    public class SpaceshipServices : ISpaceshipService
     {
         private readonly ShopDbcontext _context;
         private readonly IWebHostEnvironment _env;
@@ -39,8 +39,9 @@ namespace Shop.ApplicationServices.Services
             spaceship.EnginePower = dto.EnginePower;
             spaceship.Country = dto.Country;
             spaceship.LaunchDate = dto.LaunchDate;
-            spaceship.CreatedAt = dto.CreatedAt;
-            spaceship.ModifieAt = dto.ModifieAt;
+            spaceship.CreatedAt = DateTime.Now;
+            spaceship.ModifieAt = DateTime.Now;
+            _fileServices.ProcessUploadFile(dto, spaceship);
 
             await _context.Spaceship.AddAsync(spaceship);
             await _context.SaveChangesAsync();
@@ -82,9 +83,9 @@ namespace Shop.ApplicationServices.Services
             spaceship.EnginePower = dto.EnginePower;
             spaceship.Country = dto.Country;
             spaceship.LaunchDate = dto.LaunchDate;
-            spaceship.CreatedAt = dto.CreatedAt;
-            spaceship.ModifieAt = dto.ModifieAt;
-
+            spaceship.CreatedAt = DateTime.Now;
+            spaceship.ModifieAt = DateTime.Now;
+            _fileServices.ProcessUploadFile(dto, spaceship);
 
             _context.Spaceship.Update(spaceship);
             await _context.SaveChangesAsync();

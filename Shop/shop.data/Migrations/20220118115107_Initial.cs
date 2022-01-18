@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Shop.Data.Migrations
 {
-    public partial class init : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,6 +47,23 @@ namespace Shop.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Car",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    Value = table.Column<double>(nullable: false),
+                    Color = table.Column<string>(nullable: true),
+                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    ModifieAt = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Car", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Product",
                 columns: table => new
                 {
@@ -61,6 +78,25 @@ namespace Shop.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Product", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Spaceship",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Model = table.Column<string>(nullable: true),
+                    Company = table.Column<string>(nullable: true),
+                    EnginePower = table.Column<int>(nullable: false),
+                    Country = table.Column<string>(nullable: true),
+                    LaunchDate = table.Column<DateTime>(nullable: false),
+                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    ModifieAt = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Spaceship", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -169,6 +205,39 @@ namespace Shop.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "ExistingFilePath",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    FilePath = table.Column<string>(nullable: true),
+                    ProductId = table.Column<Guid>(nullable: true),
+                    CarId = table.Column<Guid>(nullable: true),
+                    SpaceshipId = table.Column<Guid>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ExistingFilePath", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ExistingFilePath_Car_CarId",
+                        column: x => x.CarId,
+                        principalTable: "Car",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_ExistingFilePath_Product_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Product",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_ExistingFilePath_Spaceship_SpaceshipId",
+                        column: x => x.SpaceshipId,
+                        principalTable: "Spaceship",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -207,6 +276,21 @@ namespace Shop.Data.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ExistingFilePath_CarId",
+                table: "ExistingFilePath",
+                column: "CarId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ExistingFilePath_ProductId",
+                table: "ExistingFilePath",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ExistingFilePath_SpaceshipId",
+                table: "ExistingFilePath",
+                column: "SpaceshipId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -227,13 +311,22 @@ namespace Shop.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Product");
+                name: "ExistingFilePath");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Car");
+
+            migrationBuilder.DropTable(
+                name: "Product");
+
+            migrationBuilder.DropTable(
+                name: "Spaceship");
         }
     }
 }

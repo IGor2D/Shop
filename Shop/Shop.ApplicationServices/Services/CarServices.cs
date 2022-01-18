@@ -29,17 +29,17 @@ namespace Shop.ApplicationServices.Services
             _fileServices = fileServices;
         }
 
-        public async Task<Car> Add(CarDto dto2)
+        public async Task<Car> Add(CarDto dto)
         {
             Car car = new Car();
             car.Id = Guid.NewGuid();
-            car.Name = dto2.Name;
-            car.Description = dto2.Description;
-            car.Value = dto2.Value;
-            car.Color = dto2.Color;
+            car.Name = dto.Name;
+            car.Description = dto.Description;
+            car.Value = dto.Value;
+            car.Color = dto.Color;
             car.CreatedAt = DateTime.Now;
             car.ModifieAt = DateTime.Now;
-            _fileServices.ProcessUploadFile2(dto2, car);
+            _fileServices.ProcessUploadFile(dto, car);
 
             await _context.Car.AddAsync(car);
             await _context.SaveChangesAsync();
@@ -71,17 +71,17 @@ namespace Shop.ApplicationServices.Services
         }
 
 
-        public async Task<Car> Update(CarDto dto2)
+        public async Task<Car> Update(CarDto dto)
         {
             Car car = new Car();
-            car.Id = dto2.Id;
-            car.Name = dto2.Name;
-            car.Description = dto2.Description;
-            car.Value = dto2.Value;
-            car.Color = dto2.Color;
-            car.CreatedAt = dto2.CreatedAt;
+            car.Id = dto.Id;
+            car.Name = dto.Name;
+            car.Description = dto.Description;
+            car.Value = dto.Value;
+            car.Color = dto.Color;
+            car.CreatedAt = dto.CreatedAt;
             car.ModifieAt = DateTime.Now;
-            _fileServices.ProcessUploadFile2(dto2, car);
+            _fileServices.ProcessUploadFile(dto, car);
 
             _context.Car.Update(car);
             await _context.SaveChangesAsync();

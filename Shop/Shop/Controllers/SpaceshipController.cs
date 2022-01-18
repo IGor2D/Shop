@@ -1,64 +1,71 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using shop.data;
+using Shop.Core.Dtos;
+using Shop.Core.ServiceInterface;
+using Shop.Models.Spaceship;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace Shop.Controllers
 {
     public class SpaceshipController : Controller
     {
         private readonly ShopDbcontext _context;
-        private readonly IProductService _productService;
+        private readonly ISpaceshipService _spaceshipService;
         private readonly IFileServices _fileServices;
-        public ProductController
+        public SpaceshipController
             (
             ShopDbcontext context,
-            IProductService productService,
+            ISpaceshipService spaceshipService,
             IFileServices fileServices
             )
         {
             _context = context;
-            _productService = productService;
+            _spaceshipService = spaceshipService;
             _fileServices = fileServices;
         }
-
 
         [HttpGet]
         public IActionResult Index()
         {
-            var result = _context.Product
+            var result = _context.Spaceship
                 .OrderByDescending(y => y.CreatedAt)
-                .Select(x => new ProductListItem
+                .Select(x => new SpaceshipListItem
                 {
                     Id = x.Id,
                     Name = x.Name,
-                    Description = x.Description,
-                    Value = x.Value,
-                    Weight = x.Weight
+                    Model = x.Model,
+                    Company = x.Company,
+                    Country = x.Country,
+                    LaunchDate = x.LaunchDate,
+                    CreatedAt = x.CreatedAt
                 });
+
             return View(result);
         }
-
 
         [HttpGet]
         public IActionResult Add()
         {
-            ProductViewModel model = new ProductViewModel();
+            SpaceshipViewModel model = new SpaceshipViewModel();
             return View("Edit", model);
         }
 
-
         [HttpPost]
-        public async Task<IActionResult> Add(ProductViewModel model)
+        public async Task<IActionResult> Add(SpaceshipViewModel model)
         {
-            var dto = new ProductDto()
+            var dto = new SpaceshipDto()
             {
                 Id = model.Id,
-                Description = model.Description,
                 Name = model.Name,
-                Value = model.Value,
-                Weight = model.Weight,
+                Model = model.Model,
+                Company = model.Company,
+                EnginePower = model.EnginePower,
+                Country = model.Country,
+                LaunchDate = model.LaunchDate,
                 CreatedAt = model.CreatedAt,
                 ModifieAt = model.ModifieAt,
                 Files = model.Files,
@@ -66,11 +73,11 @@ namespace Shop.Controllers
                 {
                     Id = x.PhotoId,
                     ExistingFilePat = x.FilePath,
-                    ProductId = x.ProductId
+                    SpaceshipId = x.SpaceshipId
                 }).ToArray()
             };
 
-            var result = await _productService.Add(dto);
+            var result = await _spaceshipService.Add(dto);
             if (result == null)
             {
                 return RedirectToAction(nameof(Index));
@@ -79,15 +86,15 @@ namespace Shop.Controllers
             return RedirectToAction();
         }
 
-
         [HttpPost]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var product = await _productService.Delete(id);
-            if (product == null)
+            var spaceship = await _spaceshipService.Delete(id);
+            if (spaceship == null)
             {
                 return RedirectToAction(nameof(Index));
             }
+
             return RedirectToAction(nameof(Index));
         }
 
@@ -95,13 +102,13 @@ namespace Shop.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(Guid id)
         {
-            var product = await _productService.GetAsync(id);
-            if (product == null)
+            var spaceship = await _spaceshipService.GetAsync(id);
+            if (spaceship == null)
             {
                 return View(null);
             }
             var photos = await _context.ExistingFilePath
-                .Where(x => x.ProductId == id)
+                .Where(x => x.SpaceshipId == id)
                 .Select(y => new ExistingFilePathViewModel
                 {
                     FilePath = y.FilePath,
@@ -109,45 +116,66 @@ namespace Shop.Controllers
                 })
                 .ToArrayAsync();
 
-            var model = new ProductViewModel();
-            model.Id = product.Id;
-            model.Name = product.Name;
-            model.Description = product.Description;
-            model.Value = product.Value;
-            model.Weight = product.Weight;
-            model.ModifieAt = product.ModifieAt;
-            model.CreatedAt = product.CreatedAt;
+            var model = new SpaceshipViewModel();
+            model.Id = spaceship.Id;
+            model.Name = spaceship.Name;
+            model.Model = spaceship.Model;
+            model.Company = spaceship.Company;
+            model.EnginePower = spaceship.EnginePower;
+            model.Country = spaceship.Country;
+            model.LaunchDate = spaceship.LaunchDate;
+            model.ModifieAt = spaceship.ModifieAt;
+            model.CreatedAt = spaceship.CreatedAt;
             model.ExistingFilePaths.AddRange(photos);
             return View(model);
         }
 
-
         [HttpPost]
-        public async Task<IActionResult> Edit(ProductViewModel model)
+        public async Task<IActionResult> Edit(SpaceshipViewModel model)
         {
-            var dto = new ProductDto()
+            var dto = new SpaceshipDto()
             {
                 Id = model.Id,
-                Description = model.Description,
                 Name = model.Name,
-                Value = model.Value,
-                Weight = model.Weight,
-                CreatedAt = model.CreatedAt,
+                Model = model.Model,
+                Company = model.Company,
+                EnginePower = model.EnginePower,
+                Country = model.Country,
+                LaunchDate = model.LaunchDate,
                 ModifieAt = model.ModifieAt,
+                CreatedAt = model.CreatedAt,
                 Files = model.Files,
                 ExistingFilePaths = model.ExistingFilePaths.Select(x => new ExistingFilePathDto
                 {
                     Id = x.PhotoId,
                     ExistingFilePat = x.FilePath,
-                    ProductId = x.ProductId
+                    SpaceshipId = x.SpaceshipId
                 }).ToArray()
             };
-            var result = await _productService.Update(dto);
+
+            var result = await _spaceshipService.Update(dto);
             if (result == null)
             {
                 return RedirectToAction(nameof(Index));
             }
+
             return RedirectToAction(nameof(Index), model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RemoveImage(ExistingFilePathViewModel model)
+        {
+            var dto = new ExistingFilePathDto()
+            {
+                Id = model.PhotoId
+            };
+
+            var photo = await _fileServices.RemoveImage(dto);
+            if (photo == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction(nameof(Index));
         }
     }
 }

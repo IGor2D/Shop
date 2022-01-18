@@ -5,14 +5,16 @@ using System.Text;
 
 namespace Shop.Core.Domain
 {
-    public class Car
+    public class Spaceship
     {
         [Key]
         public Guid? Id { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public double Value { get; set; }
-        public string Color { get; set; }
+        public string Model { get; set; }
+        public string Company { get; set; }
+        public int EnginePower { get; set; }
+        public string Country { get; set; }
+        public DateTime LaunchDate { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifieAt { get; set; }
         public IEnumerable<ExistingFilePath> ExistingFilePaths { get; set; } = new List<ExistingFilePath>();

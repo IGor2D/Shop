@@ -9,9 +9,9 @@ namespace Shop.Core.ServiceInterface
 {
     public interface ICarService : IApplicationService
     {
-        Task<Car> Add(CarDto dto2);
+        Task<Car> Add(CarDto dto);
         Task<Car> Delete(Guid id);
-        Task<Car> Update(CarDto dto2);
+        Task<Car> Update(CarDto dto);
         Task<Car> GetAsync(Guid id);
         //Task<ExistingFilePath> RemoveImage(ExistingFilePathDto dto);
     }

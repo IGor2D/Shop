@@ -1,4 +1,5 @@
-﻿using Shop.Models.Product;
+﻿using Microsoft.AspNetCore.Http;
+using Shop.Models.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace Shop.Models.Spaceship
         public DateTime LaunchDate { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifieAt { get; set; }
+        public List<IFormFile> Files { get; set; }
         public List<ExistingFilePathViewModel> ExistingFilePaths { get; set; } = new List<ExistingFilePathViewModel>();
     }
     public class ExistingFilePathViewModel

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shop.Core.ServiceInterface
 {
-    public class ISpaceshipService : IApplicationService
+    public interface ISpaceshipService : IApplicationService
     {
         Task<Spaceship> Add(SpaceshipDto dto);
         Task<Spaceship> Delete(Guid id);

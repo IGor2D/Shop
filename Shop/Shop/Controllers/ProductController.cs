@@ -27,7 +27,6 @@ namespace Shop.Controllers
             _fileServices = fileServices;
         }
 
-
         [HttpGet]
         public IActionResult Index()
         {
@@ -43,7 +42,6 @@ namespace Shop.Controllers
                 });
             return View(result);
         }
-
 
         [HttpGet]
         public IActionResult Add()
