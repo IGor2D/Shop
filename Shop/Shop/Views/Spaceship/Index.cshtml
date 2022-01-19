@@ -30,20 +30,20 @@
             @foreach (var spaceship in Model)
             {
                 queueNumber+= 1;
-            <tr>
-                <th scope="row">@queueNumber</th>
-                <td class="">@spaceship.Name</td>
-                <td class="">@spaceship.Model</td>
-                <td class="">@spaceship.Company</td>
-                <td class="">@spaceship.Country</td>
-                <td class="">@spaceship.LaunchDate</td>
-                <td class="">@spaceship.CreatedAt</td>
-                <td class="">
-                    <a asp-action="edit" asp-controller="spaceship" asp-route-id="@spaceship.Id" class="btn btn-primary">Edit</a>
-                    <input asp-action="delete" asp-controller="spaceship" asp-route-id="@spaceship.Id" type="submit" class="btn btn-danger" value="Delete">
-                </td>
-            </tr>
-            }
+                <tr>
+                    <th scope="row">@queueNumber</th>
+                    <td class="">@spaceship.Name</td>
+                    <td class="">@spaceship.Model</td>
+                    <td class="">@spaceship.Company</td>
+                    <td class="">@spaceship.Country</td>
+                    <td class="">@spaceship.LaunchDate</td>
+                    <td class="">@spaceship.CreatedAt</td>
+                    <td class="">
+                        <a asp-action="edit" asp-controller="spaceship" asp-route-id="@spaceship.Id" class="btn btn-primary">Edit</a>
+                        <input asp-action="delete" asp-controller="spaceship" asp-route-id="@spaceship.Id" type="submit" class="btn btn-danger" value="Delete">
+                    </td>
+                </tr>
+                }
         </tbody>
     </table>
 </form>

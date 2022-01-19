@@ -123,7 +123,6 @@ namespace Shop.Controllers
             return View(model);
         }
 
-
         [HttpPost]
         public async Task<IActionResult> Edit(ProductViewModel model)
         {
@@ -151,6 +150,7 @@ namespace Shop.Controllers
             }
             return RedirectToAction(nameof(Index), model);
         }
+
         [HttpPost]
         public async Task<IActionResult> RemoveImage(ExistingFilePathViewModel model)
         {

@@ -95,7 +95,6 @@ namespace Shop.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
         [HttpGet]
         public async Task<IActionResult> Edit(Guid id)
         {

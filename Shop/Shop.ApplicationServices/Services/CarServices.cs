@@ -43,7 +43,6 @@ namespace Shop.ApplicationServices.Services
 
             await _context.Car.AddAsync(car);
             await _context.SaveChangesAsync();
-
             return car;
         }
 
@@ -55,12 +54,12 @@ namespace Shop.ApplicationServices.Services
                 .FirstOrDefaultAsync(x => x.Id == id);
 
             var photos = await _context.ExistingFilePath
-                .Where(x => x.ProductId == id)
+                .Where(x => x.CarId == id)
                 .Select(y => new ExistingFilePathDto
                 {
                     Id = y.Id,
                     ExistingFilePat = y.FilePath,
-                    ProductId = y.ProductId
+                    CarId = y.CarId
                 })
                 .ToArrayAsync();
 

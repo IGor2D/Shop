@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Shop.Models.Product;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Shop.Models.Spaceship
 {

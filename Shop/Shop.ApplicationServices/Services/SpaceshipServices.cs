@@ -45,7 +45,6 @@ namespace Shop.ApplicationServices.Services
 
             await _context.Spaceship.AddAsync(spaceship);
             await _context.SaveChangesAsync();
-
             return spaceship;
         }
 

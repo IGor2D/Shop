@@ -8,7 +8,6 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-
 namespace Shop.Controllers
 {
     public class SpaceshipController : Controller
@@ -28,6 +27,7 @@ namespace Shop.Controllers
             _fileServices = fileServices;
         }
 
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -43,9 +43,9 @@ namespace Shop.Controllers
                     LaunchDate = x.LaunchDate,
                     CreatedAt = x.CreatedAt
                 });
-
             return View(result);
         }
+
 
         [HttpGet]
         public IActionResult Add()
@@ -53,6 +53,7 @@ namespace Shop.Controllers
             SpaceshipViewModel model = new SpaceshipViewModel();
             return View("Edit", model);
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Add(SpaceshipViewModel model)
@@ -86,6 +87,7 @@ namespace Shop.Controllers
             return RedirectToAction();
         }
 
+
         [HttpPost]
         public async Task<IActionResult> Delete(Guid id)
         {
@@ -94,10 +96,8 @@ namespace Shop.Controllers
             {
                 return RedirectToAction(nameof(Index));
             }
-
             return RedirectToAction(nameof(Index));
         }
-
 
         [HttpGet]
         public async Task<IActionResult> Edit(Guid id)
@@ -130,6 +130,7 @@ namespace Shop.Controllers
             return View(model);
         }
 
+
         [HttpPost]
         public async Task<IActionResult> Edit(SpaceshipViewModel model)
         {
@@ -152,16 +153,13 @@ namespace Shop.Controllers
                     SpaceshipId = x.SpaceshipId
                 }).ToArray()
             };
-
             var result = await _spaceshipService.Update(dto);
             if (result == null)
             {
                 return RedirectToAction(nameof(Index));
             }
-
             return RedirectToAction(nameof(Index), model);
         }
-
         [HttpPost]
         public async Task<IActionResult> RemoveImage(ExistingFilePathViewModel model)
         {
@@ -169,7 +167,6 @@ namespace Shop.Controllers
             {
                 Id = model.PhotoId
             };
-
             var photo = await _fileServices.RemoveImage(dto);
             if (photo == null)
             {
