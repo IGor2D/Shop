@@ -56,21 +56,21 @@ namespace Shop.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Add(SpaceshipViewModel model)
+        public async Task<IActionResult> Add(SpaceshipViewModel model2)
         {
             var dto = new SpaceshipDto()
             {
-                Id = model.Id,
-                Name = model.Name,
-                Model = model.Model,
-                Company = model.Company,
-                EnginePower = model.EnginePower,
-                Country = model.Country,
-                LaunchDate = model.LaunchDate,
-                CreatedAt = model.CreatedAt,
-                ModifieAt = model.ModifieAt,
-                Files = model.Files,
-                ExistingFilePaths = model.ExistingFilePaths.Select(x => new ExistingFilePathDto
+                Id = model2.Id,
+                Name = model2.Name,
+                Model = model2.Model,
+                Company = model2.Company,
+                EnginePower = model2.EnginePower,
+                Country = model2.Country,
+                LaunchDate = model2.LaunchDate,
+                CreatedAt = model2.CreatedAt,
+                ModifieAt = model2.ModifieAt,
+                Files = model2.Files,
+                ExistingFilePaths = model2.ExistingFilePaths.Select(x => new ExistingFilePathDto
                 {
                     Id = x.PhotoId,
                     ExistingFilePat = x.FilePath,
@@ -132,21 +132,21 @@ namespace Shop.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Edit(SpaceshipViewModel model)
+        public async Task<IActionResult> Edit(SpaceshipViewModel model2)
         {
             var dto = new SpaceshipDto()
             {
-                Id = model.Id,
-                Name = model.Name,
-                Model = model.Model,
-                Company = model.Company,
-                EnginePower = model.EnginePower,
-                Country = model.Country,
-                LaunchDate = model.LaunchDate,
-                ModifieAt = model.ModifieAt,
-                CreatedAt = model.CreatedAt,
-                Files = model.Files,
-                ExistingFilePaths = model.ExistingFilePaths.Select(x => new ExistingFilePathDto
+                Id = model2.Id,
+                Name = model2.Name,
+                Model = model2.Model,
+                Company = model2.Company,
+                EnginePower = model2.EnginePower,
+                Country = model2.Country,
+                LaunchDate = model2.LaunchDate,
+                ModifieAt = model2.ModifieAt,
+                CreatedAt = model2.CreatedAt,
+                Files = model2.Files,
+                ExistingFilePaths = model2.ExistingFilePaths.Select(x => new ExistingFilePathDto
                 {
                     Id = x.PhotoId,
                     ExistingFilePat = x.FilePath,
@@ -158,7 +158,7 @@ namespace Shop.Controllers
             {
                 return RedirectToAction(nameof(Index));
             }
-            return RedirectToAction(nameof(Index), model);
+            return RedirectToAction(nameof(Index), model2);
         }
         [HttpPost]
         public async Task<IActionResult> RemoveImage(ExistingFilePathViewModel model)
