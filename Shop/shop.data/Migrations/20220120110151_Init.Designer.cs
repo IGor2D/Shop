@@ -10,8 +10,8 @@ using shop.data;
 namespace Shop.Data.Migrations
 {
     [DbContext(typeof(ShopDbcontext))]
-    [Migration("20220118115107_Initial")]
-    partial class Initial
+    [Migration("20220120110151_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -261,16 +261,11 @@ namespace Shop.Data.Migrations
                     b.Property<Guid?>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("SpaceshipId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CarId");
 
                     b.HasIndex("ProductId");
-
-                    b.HasIndex("SpaceshipId");
 
                     b.ToTable("ExistingFilePath");
                 });
@@ -399,10 +394,6 @@ namespace Shop.Data.Migrations
                     b.HasOne("Shop.Core.Domain.Product", null)
                         .WithMany("ExistingFilePaths")
                         .HasForeignKey("ProductId");
-
-                    b.HasOne("Shop.Core.Domain.Spaceship", null)
-                        .WithMany("ExistingFilePaths")
-                        .HasForeignKey("SpaceshipId");
                 });
 #pragma warning restore 612, 618
         }

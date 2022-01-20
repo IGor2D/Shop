@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Shop.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -212,8 +212,7 @@ namespace Shop.Data.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     FilePath = table.Column<string>(nullable: true),
                     ProductId = table.Column<Guid>(nullable: true),
-                    CarId = table.Column<Guid>(nullable: true),
-                    SpaceshipId = table.Column<Guid>(nullable: true)
+                    CarId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -228,12 +227,6 @@ namespace Shop.Data.Migrations
                         name: "FK_ExistingFilePath_Product_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Product",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_ExistingFilePath_Spaceship_SpaceshipId",
-                        column: x => x.SpaceshipId,
-                        principalTable: "Spaceship",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -286,11 +279,6 @@ namespace Shop.Data.Migrations
                 name: "IX_ExistingFilePath_ProductId",
                 table: "ExistingFilePath",
                 column: "ProductId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ExistingFilePath_SpaceshipId",
-                table: "ExistingFilePath",
-                column: "SpaceshipId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -314,6 +302,9 @@ namespace Shop.Data.Migrations
                 name: "ExistingFilePath");
 
             migrationBuilder.DropTable(
+                name: "Spaceship");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
@@ -324,9 +315,6 @@ namespace Shop.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Product");
-
-            migrationBuilder.DropTable(
-                name: "Spaceship");
         }
     }
 }

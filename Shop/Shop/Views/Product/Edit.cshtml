@@ -42,7 +42,8 @@ else
 
         @foreach (var photo in Model.ExistingFilePaths)
         {
-<partial name="_Photo" model="photo" />}
+            <partial name="_Photo" model="photo" />
+        }
 
         <div class="form-group row">
             <label asp-for="Value" class="col-sm-2 col-form-label"></label>

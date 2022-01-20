@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using shop.data;
 
 namespace Shop.Data.Migrations
 {
     [DbContext(typeof(ShopDbcontext))]
-    partial class ShopDbcontextModelSnapshot : ModelSnapshot
+    [Migration("20220120131929_SpaceshipFiletoDatabase")]
+    partial class SpaceshipFiletoDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

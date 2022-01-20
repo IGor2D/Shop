@@ -10,6 +10,5 @@ namespace Shop.Core.Domain
         public string FilePath { get; set; }
         public Guid? ProductId { get; set; }
         public Guid? CarId { get; set; }
-        public Guid? SpaceshipId { get; set; }
     }
 }

@@ -54,37 +54,7 @@ namespace Shop.ApplicationServices.Services
             }
             return null;
         }
-        public string ProcessUploadFile(SpaceshipDto dto, Spaceship spaceship)
-        {
-            string uniqueFileName = null;
-            if (dto.Files != null && dto.Files.Count > 0)
-            {
-                if (!Directory.Exists(_env.WebRootPath + "\\multipleFileUpload\\"))
-                {
-                    Directory.CreateDirectory(_env.WebRootPath + "\\multipleFileUpload\\");
-                }
-
-                foreach (var photo in dto.Files)
-                {
-                    string uploadsFolder = Path.Combine(_env.WebRootPath, "multipleFileUpload");
-                    uniqueFileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
-                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                    using (var fileStream = new FileStream(filePath, FileMode.Create))
-                    {
-                        photo.CopyTo(fileStream);
-                        ExistingFilePath path = new ExistingFilePath
-                        {
-                            Id = Guid.NewGuid(),
-                            FilePath = uniqueFileName,
-                            SpaceshipId = spaceship.Id
-                        };
-                        _context.ExistingFilePath.AddAsync(path);
-
-                    }
-                }
-            }
-            return null;
-        }
+ 
         public string ProcessUploadFile(CarDto dto, Car car)
             {
                 string uniqueFileName = null;

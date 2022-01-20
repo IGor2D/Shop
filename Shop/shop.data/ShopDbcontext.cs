@@ -18,5 +18,6 @@ namespace shop.data
         public DbSet<Spaceship> Spaceship { get; set; }
 
         public DbSet<ExistingFilePath> ExistingFilePath { get; set; }
+        public DbSet<FileToDatabase> FileToDatabase { get; set; }
     }
 }

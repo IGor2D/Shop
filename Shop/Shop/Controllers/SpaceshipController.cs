@@ -14,17 +14,15 @@ namespace Shop.Controllers
     {
         private readonly ShopDbcontext _context;
         private readonly ISpaceshipService _spaceshipService;
-        private readonly IFileServices _fileServices;
+
         public SpaceshipController
             (
             ShopDbcontext context,
-            ISpaceshipService spaceshipService,
-            IFileServices fileServices
+            ISpaceshipService spaceshipService
             )
         {
             _context = context;
             _spaceshipService = spaceshipService;
-            _fileServices = fileServices;
         }
 
 
@@ -69,11 +67,11 @@ namespace Shop.Controllers
                 LaunchDate = model2.LaunchDate,
                 CreatedAt = model2.CreatedAt,
                 ModifieAt = model2.ModifieAt,
-                Files = model2.Files,
-                ExistingFilePaths = model2.ExistingFilePaths.Select(x => new ExistingFilePathDto
+                Image = model2.Image.Select(x => new FileToDatabaseDto
                 {
-                    Id = x.PhotoId,
-                    ExistingFilePat = x.FilePath,
+                    Id = x.Id,
+                    ImageData = x.ImageData,
+                    ImageTitle = x.ImageTitle,
                     SpaceshipId = x.SpaceshipId
                 }).ToArray()
             };
@@ -84,7 +82,7 @@ namespace Shop.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            return RedirectToAction();
+            return RedirectToAction("Index", model2);
         }
 
 
@@ -107,14 +105,16 @@ namespace Shop.Controllers
             {
                 return View(null);
             }
-            var photos = await _context.ExistingFilePath
+
+            var photos = await _context.FileToDatabase
                 .Where(x => x.SpaceshipId == id)
-                .Select(y => new ExistingFilePathViewModel
+                .Select(y => new ImageViewModel
                 {
-                    FilePath = y.FilePath,
-                    PhotoId = y.Id
-                })
-                .ToArrayAsync();
+                    ImageData = y.ImageData,
+                    Id = y.Id,
+                    Image = string.Format("data:image/gif;base64,{0}", Convert.ToBase64String(y.ImageData)),
+                    SpaceshipId = y.Id
+                }).ToArrayAsync();
 
             var model = new SpaceshipViewModel();
             model.Id = spaceship.Id;
@@ -126,7 +126,7 @@ namespace Shop.Controllers
             model.LaunchDate = spaceship.LaunchDate;
             model.ModifieAt = spaceship.ModifieAt;
             model.CreatedAt = spaceship.CreatedAt;
-            model.ExistingFilePaths.AddRange(photos);
+            model.Image.AddRange(photos);
             return View(model);
         }
 
@@ -146,12 +146,13 @@ namespace Shop.Controllers
                 ModifieAt = model2.ModifieAt,
                 CreatedAt = model2.CreatedAt,
                 Files = model2.Files,
-                ExistingFilePaths = model2.ExistingFilePaths.Select(x => new ExistingFilePathDto
+                Image = model2.Image.Select(x => new FileToDatabaseDto
                 {
-                    Id = x.PhotoId,
-                    ExistingFilePat = x.FilePath,
-                    SpaceshipId = x.SpaceshipId
-                }).ToArray()
+                   Id = x.Id,
+                   ImageData = x.ImageData,
+                   ImageTitle = x.ImageTitle,
+                   SpaceshipId = x.SpaceshipId
+                })
             };
             var result = await _spaceshipService.Update(dto);
             if (result == null)
@@ -161,14 +162,14 @@ namespace Shop.Controllers
             return RedirectToAction(nameof(Index), model2);
         }
         [HttpPost]
-        public async Task<IActionResult> RemoveImage(ExistingFilePathViewModel model)
+        public async Task<IActionResult> RemoveImage(ImageViewModel file)
         {
-            var dto = new ExistingFilePathDto()
+            var dto = new FileToDatabaseDto()
             {
-                Id = model.PhotoId
+                Id = file.Id
             };
-            var photo = await _fileServices.RemoveImage(dto);
-            if (photo == null)
+            var image = await _spaceshipService.RemoveImage(dto);
+            if (image == null)
             {
                 return RedirectToAction(nameof(Index));
             }
