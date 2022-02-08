@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 using shop.data;
 using Shop.Core.Domain;
 using Shop.Core.Dtos;
@@ -120,11 +119,13 @@ namespace Shop.ApplicationServices.Services
         }
         public async Task<FileToDatabase> RemoveImage(FileToDatabaseDto dto)
         {
-            var image = await _context.FileToDatabase
-                .FirstOrDefaultAsync(x => x.Id == dto.Id);
-            _context.FileToDatabase.Remove(image);
+            var ImageId = await _context.FileToDatabase
+                .Where(x => x.Id == dto.Id)
+                .FirstOrDefaultAsync();
+
+            _context.FileToDatabase.Remove(ImageId);
             await _context.SaveChangesAsync();
-            return image;
+            return ImageId;
         }
     }
 }
