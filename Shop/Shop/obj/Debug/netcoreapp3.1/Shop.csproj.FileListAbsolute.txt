@@ -54,6 +54,7 @@ C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
@@ -71,6 +72,7 @@ C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.UserSecrets.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
@@ -87,6 +89,7 @@ C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.EventSource.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
@@ -94,6 +97,7 @@ C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Nancy.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
@@ -143,6 +147,7 @@ C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Spaceship\Edit.cshtml.g.cs
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Spaceship\Index.cshtml.g.cs
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Spaceship\_Photo.cshtml.g.cs
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Shop.RazorTargetAssemblyInfo.cache
@@ -152,4 +157,5 @@ C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Shop.dll
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Shop.pdb
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Shop.genruntimeconfig.cache
-C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Spaceship\_Photo.cshtml.g.cs
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\WeatherForecast\City.cshtml.g.cs
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\WeatherForecast\SearchCity.cshtml.g.cs
