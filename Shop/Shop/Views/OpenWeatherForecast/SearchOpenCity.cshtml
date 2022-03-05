@@ -1,0 +1,16 @@
+﻿@model Shop.Models.OpenWeather.SearchOpenCity
+
+<form method="post">
+    <div class="form-group col-md-offset-5 col-md-5">
+        <h2>CITY FORECAST</h2>
+        <label asp-for="OpenCityName" style="font-family: Arial"></label>
+        <input asp-for="OpenCityName" class="form-control" />
+        <span asp-validation-for="OpenCityName" class="text-danger"></span>
+    </div>
+
+    <div class="container">
+        <div class="form-group col-md-offset-3 col-md-5">
+            <button asp-controller="OpenWeatherForecast" asp-action="SearchOpenCity" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</form>

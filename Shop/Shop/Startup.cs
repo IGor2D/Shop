@@ -34,6 +34,7 @@ namespace Shop
             services.AddScoped<ICarService, CarServices>();
             services.AddScoped<ISpaceshipService, SpaceshipServices>();
             services.AddScoped<IWeatherForecastServices, WeatherForecastServices>();
+            services.AddScoped<IOpenWeatherForecastServices, OpenWeatherForecastServices>();
             services.AddControllersWithViews();
         }
 

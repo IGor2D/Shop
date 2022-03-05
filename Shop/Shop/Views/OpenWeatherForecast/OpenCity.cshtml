@@ -1,0 +1,42 @@
+﻿@model Shop.Models.OpenWeather.OpenCityViewModel
+
+<h1>City</h1>
+
+<div class="container">
+    <div class="form-group col-md-3">
+        <br />
+        <h2>Forecast for the selected city</h2>
+
+        <label asp-for="City">City:</label>
+        <span class="badge">@Model.City</span>
+        <br />
+
+        <label asp-for="Temperature">Temperature:</label>
+        <span class="badge">@Model.Temperature °C</span>
+        <br />
+
+        <label asp-for="TempFeelsLike">Temp Feels Like:</label>
+        <span class="badge">@Model.TempFeelsLike °C</span>
+        <br />
+
+        <label asp-for="Humidity">Humidity:</label>
+        <span class="badge">@Model.Humidity %</span>
+        <br />
+
+        <label asp-for="Pressure">Pressure:</label>
+        <span class="badge">@Model.Pressure Hpa</span>
+        <br />
+
+        <label asp-for="WindSpeed">Wind Speed:</label>
+        <span class="badge">@Model.WindSpeed Km/h</span>
+        <br />
+
+        <label asp-for="WeatherCondition">Weather Condition:</label>
+        <span class="badge">@Model.WeatherCondition</span>
+        <br />
+
+        <div class="container">
+            <button onclick="window.location.href='/OpenWeatherForecast/SearchOpenCity'" asp-controller="OpenWeatherForecast" asp-action="SearchOpenCity" class="btn btn-primary">Return</button>
+        </div>
+    </div>
+</div>
