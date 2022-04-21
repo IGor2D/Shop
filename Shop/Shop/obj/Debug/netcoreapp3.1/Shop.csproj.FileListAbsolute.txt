@@ -161,3 +161,4 @@ C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\WeatherForecast\SearchCity.cshtml.g.cs
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\OpenWeatherForecast\OpenCity.cshtml.g.cs
 C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\obj\Debug\netcoreapp3.1\Razor\Views\OpenWeatherForecast\SearchOpenCity.cshtml.g.cs
+C:\Users\J.Sound\Desktop\TTHK\Programeerimine\Ingvar\TITgv20_shop\Shop\Shop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll

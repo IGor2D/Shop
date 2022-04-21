@@ -1,10 +1,6 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using Shop.Core;
+﻿using Microsoft.EntityFrameworkCore;
 using Shop.Core.Domain;
-using System;
-using System.Threading.Tasks;
+
 
 namespace shop.data
 {

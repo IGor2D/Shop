@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fv7bN3sqV3FjfHTkHGRjM9G4VfUoP8rnmXvyg9GuG//jiemWRkeLNHeTTQmA80vsGEE4ziHZ/OG7yEK5kDoNaw==",
+  "dgSpecHash": "BLxM1KrpVSkLTvHIyvOJnqt22xfqH0Mq/RcurtMVkgLsqwJyCTWhuZU30APRGYa+DVBC3uer9NEQY3P81eOMDQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\J.Sound\\Desktop\\TTHK\\Programeerimine\\Ingvar\\TITgv20_shop\\Shop\\Shop\\Shop.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,7 @@
     "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.20\\microsoft.entityframeworkcore.abstractions.3.1.20.nupkg.sha512",
     "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.20\\microsoft.entityframeworkcore.analyzers.3.1.20.nupkg.sha512",
     "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.20\\microsoft.entityframeworkcore.design.3.1.20.nupkg.sha512",
+    "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\3.1.20\\microsoft.entityframeworkcore.inmemory.3.1.20.nupkg.sha512",
     "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.20\\microsoft.entityframeworkcore.relational.3.1.20.nupkg.sha512",
     "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.20\\microsoft.entityframeworkcore.sqlserver.3.1.20.nupkg.sha512",
     "C:\\Users\\J.Sound\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.20\\microsoft.entityframeworkcore.tools.3.1.20.nupkg.sha512",
